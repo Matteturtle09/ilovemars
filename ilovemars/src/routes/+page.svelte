@@ -1,6 +1,6 @@
-
-<nav class="navbar bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">Navbar</span>
-    </div>
-  </nav>
+<script>
+    import Navbar from "../components/navbar.svelte";
+    import Carousel from "../components/carousel.svelte";
+</script>
+<Navbar/>
+<Carousel/>

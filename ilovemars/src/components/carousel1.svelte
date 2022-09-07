@@ -7,7 +7,7 @@
   console.log(date);
   var active;
   const apiKey = "SUzid8msGrSLtqAP61POz1wYTEMZNQ4XYvEjipTl";
-  var url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${apiKey}`;
+  var url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&camera=MAHLI&api_key=${apiKey}`;
   var link_array = [];
   function displaydata(data) {
     let jsonstring = JSON.stringify(data);
@@ -41,25 +41,18 @@
   fetchData();
 
   </script>
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active" data-bs-interval="1000">
       
       <img src="{active}" class="d-block w-100" alt="...">
       
     </div>
   {#each link_array as link}
-<div class="carousel-item">
+<div class="carousel-item" data-bs-interval="1000">
   <img src="{link}" class="d-block w-100" alt="...">
 </div>
 {/each}
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+ 
 </div>

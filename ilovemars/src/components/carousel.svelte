@@ -5,6 +5,7 @@
   var yyyy = today.getFullYear();
   const date = yyyy + "-" + dd + "-" + mm;
   console.log(date);
+  var active;
   const apiKey = "SUzid8msGrSLtqAP61POz1wYTEMZNQ4XYvEjipTl";
   var url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${apiKey}`;
   var link_array = [];
@@ -20,6 +21,9 @@
       link_array.push(photoarray[i].img_src);
       console.log(link_array);
       link_array = link_array;
+      active = link_array[0];
+      active = active;
+      
     }
   }
   function fetchData() {
@@ -35,11 +39,14 @@
     }
   }
   fetchData();
-</script>
+
+  </script>
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2021/11/12/09/11/elephants-6788416__340.jpg" class="d-block w-100" alt="...">
+      
+      <img src="{active}" class="d-block w-100" alt="...">
+      
     </div>
   {#each link_array as link}
 <div class="carousel-item">
